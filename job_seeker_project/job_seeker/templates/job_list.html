@@ -1,0 +1,22 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job List</title>
+</head>
+<body>
+    <h1>Available Jobs</h1>
+    <ul>
+        {% for job in jobs %}
+            <li>
+                <a href="{% url 'job_detail' job.id %}">{{ job.title }} at {{ job.company }}</a>
+                <p>{{ job.location }} - {{ job.posted_date }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html>
